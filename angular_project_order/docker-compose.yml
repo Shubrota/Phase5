@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  angular-app:
+    image: my-taxi-angular-app
+    ports:
+      - "80:80"
+    depends_on:
+      - json-server
+
+  json-server:
+    image: clue/json-server
+    volumes:
+      - ./db.json:/data/db.json
+    ports:
+      - "3000:80"

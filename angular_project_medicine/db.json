@@ -1,0 +1,31 @@
+{
+  "products": [
+    {
+      "id": "10000",
+      "name": "HP Mouse2",
+      "price": "4029",
+      "productImage": "assets/images/hp-mouse.JPG"
+    },
+    {
+      "id": "10001",
+      "name": "Apple iPhone V2",
+      "price": "77667",
+      "productImage": "assets/images/apple-iphone.JPG"
+    }
+  ],
+  "user": [
+    {
+      "name": "Steve",
+      "age": "21",
+      "username": "steve123",
+      "password": "qwerty123",
+      "address": "Street 12, New Delhi",
+      "referralCode": "R123",
+      "isCabRider": "Yes",
+      "panCard": "GUE377IEI0",
+      "rc": "R123",
+      "dl": "DL59839",
+      "vehicle": "Toyota Innova"
+    }
+  ]
+}

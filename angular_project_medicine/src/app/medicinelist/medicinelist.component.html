@@ -1,0 +1,32 @@
+<!-- <div style="border: 2px solid green;"> -->
+
+    List of Medicine on sale
+
+    <div *ngIf="medicine.length>0;else elseBlock">
+        <table border="2" >
+    
+            <thead>
+                <tr>
+                    <th>Sl No</th>
+                    <th>Medicine Name</th>
+                    <th>MEdicine Brand</th> 
+                    <th>MEdicine Symptom</th> 
+                    <th> EDIT </th>                   
+                    <th> DELETE </th>
+                </tr>
+            </thead>
+    
+            <tr *ngFor="let med of medicine; index as i">
+                <td> {{i+1}}</td>
+                <td> {{med.name}}</td>
+                <td> {{med.brand}}</td>    
+                <td> {{med.symptom}}</td>                              
+                <td> <button (click)="deleteMedicine(med.id)" > DELETE </button></td>
+            </tr>
+    
+        </table>
+    </div>
+     
+    <ng-template #elseBlock> No medicine on Sale!! Visit a day later. </ng-template >
+    
+    <!-- </div> -->

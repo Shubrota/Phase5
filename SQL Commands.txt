@@ -1,0 +1,34 @@
+CREATE SCHEMA `phase5` ;
+
+use phase5;
+
+CREATE TABLE `phase5`.`user` (
+  `idUser` INT NOT NULL,
+  `Username` VARCHAR(45) NULL,
+  `UserPassword` VARCHAR(45) NULL,
+  PRIMARY KEY (`idUser`));
+
+
+CREATE TABLE `phase5`.`medicine` (
+  `idMedicine` INT NOT NULL,
+  `Medicine name` VARCHAR(45) NULL,
+  `MedicineBrand` VARCHAR(45) NULL,
+  `MedicineSymptom` VARCHAR(45) NULL,
+  PRIMARY KEY (`idMedicine`));
+
+CREATE TABLE `phase5`.`transaction` (
+  `idTransaction` INT NOT NULL,
+  `TransactionMedicine` VARCHAR(45) NULL,
+  `TransactionPrescription` VARCHAR(45) NULL,
+  `Transactionstripsno` VARCHAR(45) NULL,
+  `TransactionPrice` VARCHAR(45) NULL,
+  PRIMARY KEY (`idTransaction`));
+
+insert into user values ('1','Admin','Admin');
+
+ALTER TABLE `phase5`.`transaction` 
+ADD COLUMN `idMedicine` INT NULL AFTER `TransactionPrice`;
+
+ALTER TABLE transaction
+ADD CONSTRAINT FK_MedicineOrder
+FOREIGN KEY (idMedicine) REFERENCES Medicine(idMedicine);

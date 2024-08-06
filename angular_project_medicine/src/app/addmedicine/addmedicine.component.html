@@ -1,0 +1,49 @@
+<div class="container">
+    <h2>Add Medicine (for JSON Server)</h2>
+
+    <form [formGroup]="medicineForm">
+
+        <div class="form-group">
+            
+            <label for="medicineName">medicine Name:</label>
+
+            <input id="medicineName" formControlName="medicineName" >
+
+            <div *ngIf="medicineForm.get('medicineName')?.hasError('required')" class="error-message">medicine Name is
+                required.</div>
+            <div *ngIf="medicineForm.get('medicineName')?.hasError('minlength')" class="error-message">medicine Name must
+                be at least 3 characters long.</div>
+        </div>
+        <div class="form-group">
+            
+            <label for="medicineBrand">medicine Brand:</label>
+
+            <input id="medicineBrand" formControlName="medicineBrand" >
+
+            <div *ngIf="medicineForm.get('medicineBrand')?.hasError('required')" class="error-message">medicine Brand is
+                required.</div>
+            <div *ngIf="medicineForm.get('medicineBrand')?.hasError('minlength')" class="error-message">medicine Brand must
+                be at least 3 characters long.</div>
+        </div>
+
+        <div class="form-group">
+            
+            <label for="MedicineSymptom">medicine Symptom:</label>
+
+            <input id="MedicineSymptom" formControlName="MedicineSymptom" >
+
+            <div *ngIf="medicineForm.get('MedicineSymptom')?.hasError('required')" class="error-message">medicine Brand is
+                required.</div>
+            <div *ngIf="medicineForm.get('MedicineSymptom')?.hasError('minlength')" class="error-message">medicine Brand must
+                be at least 3 characters long.</div>
+        </div>
+        
+        
+
+        <button (click)="addmedicine()" [disabled]="medicineForm.invalid" class="btn btn-primary">Add medicine</button>
+
+
+    </form>
+
+
+</div>
